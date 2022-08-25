@@ -1,0 +1,237 @@
+# ページナビゲーション
+nav:
+  - index.md
+# - テストタイトル:
+#   - test/page1.md
+#   - testの1:
+#     - はじめに : test/testの1/index.md
+#     - test/testの1/page1-1.md
+#     - test/testの1/page1-2.md
+#     - testの2:
+#       - test/testの1/page1-3.md
+#   - testの11:
+#     - test/page2.md
+  - Hands-on:
+    - はじめに: hands-on/index.md
+    - 気象観測:
+      - はじめに: hands-on/weather/index.md
+      - 観測結果:
+        - リアルタイム値: hands-on/weather/monitoring_results/realtime.md
+        - 週間値: hands-on/weather/monitoring_results/week.md
+        - 月間値: hands-on/weather/monitoring_results/month.md
+        - 年間値: hands-on/weather/monitoring_results/year.md
+  - その他:
+    - はじめに: others/index.md
+    - 記法サンプル:
+      - Markdown記法: others/markdown_sample.md
+      - Material for MkDocs記法サンプル: others/Material_for_MkDocs_sample.md
+
+
+# サイト名。ヘッダーに記載
+site_name: 'tsrg.undo'
+# metaのdescription属性。検索サイトの表示用文章
+site_description: 'This site was created for personal learning. It contains personal notes.'
+# metaのauthor属性。サイト管理者名
+site_author: 'ginteru'
+# siteのurl（サブディレクトリがあれば必須）
+site_url: 'https://tsrg.undo.jp'
+
+# githubリポジトリurl
+repo_url: 'https://github.com/ginteru/For_tsrg.undo'
+# githubリポジトリ名称
+repo_name: 'ginteru/For_tsrg.undo'
+# 自動的に編集ボタンが表示されるので消す
+edit_uri: ""
+
+
+
+# フォルダーへのリンクがデフォルト(true)。ファイルへのリンクにしないと[index.html]以外表示できない
+#   https://www.mkdocs.org/user-guide/configuration/#use_directory_urls
+use_directory_urls: false
+
+# テーマ
+theme:
+  name: material
+  custom_dir: overrides
+  language: ja
+  font:
+    # 当初、text: Jun 201, Noto Sans JPと複数指定していたが、どうもローカルのフォントが優先されるようで、webにアップしても後者で表示されていた。
+    # 本当は、はじめに指定したwebフォントが使えない場合は、後ろのフォント、という指定がしたかったのだが、
+    # ちょっと調べてもよくわからなかったので、はじめに指定したさくらのレンタルサーバ用のwebフォントのみとした。
+    #text: 'Jun 201, Noto Sans JP'
+    text: 'Jun 201'
+    # ブロック内等幅フォント
+    code: 'Roboto Mono'
+  palette:
+    # 全体をダークモード
+    scheme: slate
+    # 緑系の色をベース色
+    primary: 'teal'
+    # 深いオレンジをアクセント色
+    accent: 'deep orange'
+  # logoファイル
+  logo: images/icon-96x96.png
+  # faviconファイル
+  favicon: images/favicon.ico
+  features:
+    # --------------------------------------------
+    #   navigation
+    # --------------------------------------------
+    # SPA(シングルページアプリケーション)のような動き
+    - navigation.instant
+    # URLがアンカーに追随する？
+    - navigation.tracking
+    # 上部にナビゲーションタブを表示
+    - navigation.tabs
+    # タブ表示を固定（スクロールダウンしても表示し続ける）（[header.autohide]と競合する）
+    #   画面が狭くなることに対するメリットがそれほどなさそうに感じて無効化
+    #- navigation.tabs.sticky
+    # トップレベルセクションをサイドバーでグルーピング（わかりにくいような気がして無効化）
+    #- navigation.sections
+    # サイドバーを常に展開しておく（ページ数が多くなるとわかりにくくなりそう）
+    #- navigation.expand
+
+    # ドキュメントが直接セクションに紐付けられる（概要ページの作成）
+    #- navigation.indexes
+    # 以下のようにindex.mdを作る
+    # nav:
+    #   - Section:
+    #     - section/index.md
+    #     - Page 1: section/page-1.md
+    #     ...
+    #     - Page n: section/page-n.md
+    # ただし以下の[toc.integrate]と競合するらしい
+    
+    # 右サイドバーにあるページメニューを左サイドバーに統合する（その分本文領域が広くなる）
+    #   左サイドバーの情報が多すぎるように思えたので、利用しない。
+    #- toc.integrate
+    # Metadata機能が有効な場合、ナビゲーションやページメニューなどを隠すことができる。
+    #   https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#hiding-the-sidebars
+    
+    # ページトップに戻るボタン表示(ちょっと上にスクロールすると出てくる)
+    - navigation.top
+
+    # --------------------------------------------
+    #   search
+    # --------------------------------------------
+    # 検索ワードのハイライト
+    - search.highlight
+
+    # --------------------------------------------
+    #   header
+    # --------------------------------------------
+    # ある程度スクロールしたら自動的にヘッダーが隠される
+    #- header.autohide
+
+
+# 追加css, js
+extra_css:
+  - "https://use.fontawesome.com/releases/v5.15.0/css/all.css"
+  - stylesheets/extra.css
+extra_javascript:
+  - javascripts/extra.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - "//webfonts.sakura.ne.jp/js/sakurav3.js"
+
+extra:
+  # Google Analytics
+  analytics:
+    provider: google
+    property: G-DTKLFBV70L
+
+# 日本語検索には問題がある？ https://www.mkdocs.org/user-guide/configuration/#lang
+
+markdown_extensions:
+
+  # Python Markdown
+  # 小さいtooltipを表示してくれる。txtのみ。　https://squidfunk.github.io/mkdocs-material/reference/tooltips/#adding-abbreviations
+  - abbr
+  # 注釈枠などを出してくれる。[!!!]や[???(+)]ではじめる。事例：https://squidfunk.github.io/mkdocs-material/reference/admonitions/#usage
+  # Python Markdown Extensionsの[pymdownx.details]を利用して、閉じたり開いたりができるようになる。
+  - admonition
+  # HTML属性が使えるようになる。これ単体でどうこいうというより、他の機能で使われている？
+  - attr_list
+  # 定義リストが使えるようになる。あと、チェックリストが綺麗になる。 https://squidfunk.github.io/mkdocs-material/reference/lists/#using-definition-lists
+  - def_list
+  # 綺麗なfootnoteを出してくれる。linkを使うと本文に戻れる。 https://squidfunk.github.io/mkdocs-material/reference/footnotes/#adding-footnote-references
+  - footnotes
+  # これも他の表現を支えるものと思われるが、図キャプションをつけることができるのは役立つかも。 https://squidfunk.github.io/mkdocs-material/reference/images/#image-captions
+  - md_in_html
+  # ページ内目次をカスタマイズできる
+  - toc:
+      title: ページ内目次
+      # 本文内の見出しにセクションマークとリンクをつけてくれる。他には錨マークもあり
+      permalink: ⚓︎
+      # セクションへのリンク（上のマーク）に対するポップアップ説明
+      permalink_title: このセクションへのリンク
+
+  # Python Markdown Extensions
+  # 数式表現を行うもの。とりあえずは不要。
+  #- pymdownx.arithmatex:
+  #    generic: true
+  # 強調表現を拡張する。何が変わるのかははっきりとはよくわからない。 https://facelessuser.github.io/pymdown-extensions/extensions/betterem/
+  - pymdownx.betterem:
+      smart_enable: all
+  # 下線[^^]と上付き文字[^]が記載できる。 https://facelessuser.github.io/pymdown-extensions/extensions/caret/
+  - pymdownx.caret
+  # [==]でハイライト文字列が記載できる。 https://facelessuser.github.io/pymdown-extensions/extensions/mark/
+  - pymdownx.mark
+  # [~~]で取り消し線文字列と下付き文字[~]が記載できる。 https://facelessuser.github.io/pymdown-extensions/extensions/tilde/
+  - pymdownx.tilde
+  # python Markdownの[admonition]で閉じたり、開いたりができるようになる。
+  - pymdownx.details
+  # 文字装飾
+  - pymdownx.critic
+  # 絵文字が使えるようになる。
+  - pymdownx.emoji:
+  # デフォルト設定である[emojione]はライセンスの問題で非推奨らしく、twemojiに変更している
+  # 絵文字検索は https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
+  # またはここも使えるかも https://www.webfx.com/tools/emoji-cheat-sheet/
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  # code blocks（含むインライン）のハイライトを可能にする。他に[superfences, inlinehilite]も必要。
+  - pymdownx.highlight #:
+      # 全体にline noを入れる場合に設定する。個別にコードブロックに設定したい場合は、例えば最初に[``` py linenums="1"]などと開始番号を指定する
+      #linenums: true
+  # インラインハイライトのために利用。例えば[`#!python range(0,1,2)`]のように記載する
+  - pymdownx.inlinehilite
+  # keyをわかりやすく表示する。例えば[++ctrl+alt+delete++]。他の記載例 https://facelessuser.github.io/pymdown-extensions/extensions/keys/#alphanumeric-and-space-keys
+  - pymdownx.keys
+  # 組み合わせたシンボルを表示する。例えば[(c)]とか[-->]など。大した数はない。 他の記載例 https://facelessuser.github.io/pymdown-extensions/extensions/smartsymbols/
+  - pymdownx.smartsymbols
+  # コードブロックなどで使われている。
+  - pymdownx.superfences
+  # tabで表示を切り替えられる表現ができる。[===] https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/
+  - pymdownx.tabbed:
+      alternate_style: true
+  # チェックボックスの表現をきれいにする。 https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # 外部ファイルから読み込む https://facelessuser.github.io/pymdown-extensions/extensions/snippets/
+  - pymdownx.snippets:
+      check_paths: true # snippets指定ファイルがない場合、ビルドをエラーとする
+
+
+# 以下メモ書き
+#
+#nav:
+#    - 'はじめに': index.md
+#    - 'Notepad++のインストール': install-notepadpp.md
+#    - 'Pythonのインストール': install-python.md
+#    - 'MkDocsのインストール': install-mkdocs.md
+#    - 'Markdownのサンプル': markdown-sample.md
+#    - 'ymlファイルのサンプル': mkdocs-yml-sample.md
+#    - 'Materialテーマの導入': install-mkdocs-material.md
+#    # URL直接指定
+#   - 'link:トップに戻る' : https://caldia.tuzikaze.com/studio
+#    - 'link:CaldiaのVRM Room' : https://caldia.tuzikaze.com
+#    # 子ページの作成も可能
+#    - Test:
+#        - page1: test/page1.md
+#        - page2: test/page2.md
+
+# デフォルトで有効なプラグイン
+# pageにmetaデータを追加できる。pageごとに記載する必要がある？ https://squidfunk.github.io/mkdocs-material/reference/#usage
+# navigationやtoc表示をページ単位で制御できる。 https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#hiding-the-sidebars
+# ここの記載を使えば、コメントありなしページを制御できる？ https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-template
+#- meta

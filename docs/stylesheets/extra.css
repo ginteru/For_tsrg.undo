@@ -1,0 +1,266 @@
+/*
+    見出しの設定
+    cf. https://poppyou.com/heading-design.html
+    cf. https://github.com/fereria/reincarnation_tech/blob/master/docs/stylesheets/extra.css
+*/
+.md-typeset h1 {
+    /*font-size: 24pt;*/
+    font-weight: normal;
+    font-family: 'Midashi Go MB31';
+    padding-top: .5em;
+    padding-bottom: .5em;
+    padding-left: .5em;
+    margin-bottom: 1.5em;
+    background-color: rgb(0, 122, 108, 0.64);/* 背景色 */
+    color: #ffffff;/* フォント色 */
+    border-radius: 15px;/* 角丸 */
+  }
+.md-typeset h1::before {
+    display: inline-block !important;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f5b0" !important;/* 到着はf5af*/
+    font-weight: 900;
+    margin-right: 0.3em;
+  }
+
+.md-typeset h2 {
+    font-weight: normal;
+    font-family: 'Midashi Go MB31';
+    background-color: hwb(31 10% 35%);/* 背景色 */
+    border-bottom: solid 5px #f18b21;
+    padding-bottom: 5px;
+    padding-left: .5em;
+    padding-top: .25em;
+    border-radius: 15px;/* 角丸 */
+  }
+.md-typeset h2::before {
+    display: inline-block !important;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f072" !important;
+    font-weight: 900;
+    margin-right: 0.3em;
+  }
+
+.md-typeset h3 {
+    font-weight: normal;
+    font-family: 'Midashi Go MB31';
+    /*background-color: hwb(31 13% 64%); 背景色 */
+    border: solid 2.5px #f18b21;
+    padding-bottom: 5px;
+    padding-left: .5em;
+    padding-top: .25em;
+    border-radius: 15px;/* 角丸 */
+  }
+.md-typeset h3::before {
+    display: inline-block !important;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f533" !important;
+    font-weight: 900;
+    margin-right: 0.3em;
+  }
+
+.md-typeset h4 {
+    font-weight: normal;
+    font-family: 'Midashi Go MB31';
+    /*background-color: hwb(31 13% 64%); 背景色 */
+    border: dotted 2.5px #f18b21;
+    padding-bottom: 5px;
+    padding-left: .5em;
+    padding-top: .25em;
+    border-radius: 15px;/* 角丸 */
+  }
+.md-typeset h4::before {
+    display: inline-block !important;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f1d8" !important;
+    font-weight: 900;
+    margin-right: 0.3em;
+  }
+
+.md-typeset h5 {
+    font-weight: normal;
+    font-family: 'Midashi Go MB31';
+    color: hsla(232,75%,90%,0.95);
+    font-size: .8rem;
+    border-bottom: dotted 2.5px #f18b21;
+    padding-bottom: 5px;
+    padding-left: .5em;
+    padding-top: .25em;
+    border-radius: 15px;/* 角丸 */
+  }
+.md-typeset h5::before {
+    display: inline-block !important;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f102" !important;
+    font-weight: 900;
+    margin-right: 0.3em;
+  }
+
+.md-typeset h6 {
+    font-weight: normal;
+    font-family: 'Midashi Go MB31';
+    color: hsla(232,75%,90%,0.88);
+    font-size: .8rem;
+    border-bottom: dotted 1.0px #888888;
+    padding-bottom: 5px;
+    padding-left: .5em;
+    padding-top: .25em;
+    border-radius: 15px;/* 角丸 */
+  }
+.md-typeset h6::before {
+    display: inline-block !important;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f106" !important;
+    font-weight: 900;
+    margin-right: 0.3em;
+  }
+
+/* コメント表記用 */
+.md-typeset #__comments {
+    font-weight: normal;
+    font-family: 'Midashi Go MB31';
+    background-color: revert;/*背景色を戻す */
+    border-bottom: dotted 3px #888888;
+    padding-bottom: 5px;
+    padding-left: .5em;
+    padding-top: 2.5em;
+}
+.md-typeset #__comments::before {
+    display: inline-block !important;
+    font-family: 'Font Awesome 5 Free';
+    content: "\f5af" !important;
+    font-weight: 900;
+    margin-right: 0.3em;
+}
+
+/*
+    画面幅をブラウザにあわせる。公式ページに記載の方法
+    https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#content-area-width
+*/
+.md-grid {
+    max-width: initial;
+}
+
+/*
+    本文の強調色を変えた
+    黄色背景に黒文字
+*/
+.md-typeset mark {
+    background-color: rgb(255 228 66 / 87%);
+    color: #000000;
+}
+/*
+    codeblockの強調色を変えた
+    黄色背景に黒文字
+    上と同じにすると文字が見えにくくなるので透過率を調整。
+*/
+.highlight .hll {
+    background-color: rgb(255 228 66 / 30%);
+}
+
+/*
+    右側ページ内目次に記載した「最終更新日」のスタイル設定
+        ・右側のページ内目次で出てくる<hr>が見えにくいのでちょっと色や表現を変えた
+        ・更新日であることがわかりやすいようにclockのアイコンを入れた。これは本文の記載と共通。
+        ・灰色にして目立たないようにした。
+            オリジナルは[data-md-color-scheme=slate]の[--md-default-fg-color--light: hsla(var(--md-hue),75%,90%,0.62);]
+*/
+.md-nav--secondary hr {
+    margin-top: 20px;
+    /*border-top: 1px dashed hsl(232, 75%, 95%, 0.32);*/
+    border-bottom: 1px dashed hsl(232, 75%, 95%, 0.32);
+}
+.md-source-file ::before {
+    display: inline-block;
+    content: '\f017';
+    font-family: 'Font Awesome 5 Free';
+    margin-right: .3em;
+    margin-left: .6em;
+}
+.md-nav--secondary .md-source-file {
+    color: hsl(232, 75%, 95%, 0.32);
+}
+
+/*
+    h1-h5のスタイル修正
+
+.md-typeset h1::before {
+    display: inline-block !important;
+    font-family: "Font Awesome 5 Free";
+    content: "\f02d" !important;
+    margin-right: 0.3em;
+  }
+*/
+
+/*
+    左側メニューのスタイル修正。参考→ https://github.com/fereria/reincarnation_tech/blob/master/docs/stylesheets/extra.css
+*/
+/*  メニューのスタイル
+    頭にフォルダマークを入れる */
+label.md-nav__link:before {
+    content: "\f07b";
+    font-family: "Font Awesome 5 Free";
+    padding-right: 5px;
+  }
+/*  メニューのスタイル
+    背景を入れてわかりやすく */
+label.md-nav__link {
+  font-weight: bold;
+  justify-content: flex-start;
+  background-color: rgb(0, 122, 108, 0.64);
+  padding: 2px 2px 2px 10px;
+  font-size: 0.7rem;
+  margin-top: 0.7rem;
+}
+/*  メニューのスタイル
+    linkになっているところはちょっと小さめ */
+a.md-nav__link {
+    font-size: 0.7rem;
+}
+/*div.md-sidebar {
+    width: 13rem;
+}*/
+/* topレベルメニューの体裁。複雑なセレクタは開発者ツールからコピペ */
+.md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link {
+    padding: 0.25rem 0;
+    margin-right: 0.5rem;
+}
+.md-nav--lifted>.md-nav__list>.md-nav__item--active>.md-nav__link:before {
+    padding-left: 0.35rem;
+}
+/* 表示しているページをわかりやすく。複雑なセレクタは開発者ツールからコピペ */
+.md-nav__item .md-nav__link--active {
+    font-weight: bold;
+}
+.md-nav__item .md-nav__link--active::after{
+    content: "\f0a5";
+    font-family: "Font Awesome 5 Free";
+}
+
+/*
+    画面トップのロゴマークがなんだか小さい
+*/
+.md-header__button.md-logo :-webkit-any(img,svg) {
+    height: 2rem;
+}
+
+/*
+    テーブルヘッダを目立たせる
+*/
+.md-typeset table th[role=columnheader] {
+    background-color: rgb(0, 122, 108, 0.25);
+}
+/*
+    テーブル枠線を入れる
+*/
+.md-typeset table:not([class]) {
+    border-collapse: collapse;
+    border: solid 2px rgb(0, 122, 108, 0.64);/*表全体を線で囲う*/
+    border-radius: 0.8rem;
+}
+/*
+    セル縦線を入れる
+*/
+.md-typeset table:not([class]) td {
+    border-right: dashed 0.5px rgb(0, 122, 108, 0.20);/*表全体を線で囲う*/
+}

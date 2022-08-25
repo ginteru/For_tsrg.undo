@@ -1,0 +1,8 @@
+# 書き方参考
+# https://www-creators.com/archives/1662
+
+# MkDocsビルド成果物は不要
+site/
+
+# 一時作業ファイルは不要
+src/
