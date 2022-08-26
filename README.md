@@ -1,2 +1,8 @@
-# For_tsrg_giscus
-For comment system on tsrg web site
+# For tsrg.undo
+
+https://tsrg.undo.jp
+
+Material for MkDocsを利用して作成したサイトのソースを登録。
+
+githubの使い方を学ぶ場所。
+
