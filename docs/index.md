@@ -25,6 +25,10 @@ hide:
 
 ## 最近の更新
 
+### 2022年9月4日
+
+[LINE Notify](hands-on/LINE_Notify/index.md)を作成。メールをLINEへ流す。
+
 ### 2022年8月20日
 
 [hands-onカテゴリ](hands-on/index.md)を作成。[気象観測のサブカテゴリ](hands-on/weather/index.md)を作成し、4種の観測結果を示すページを作成。
