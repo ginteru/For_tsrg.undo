@@ -1,6 +1,6 @@
 ---
-title: weather-monitoring_はじめに
-description: weather-monitoring_ページの扉
+title: weather monitoring-はじめに
+description: weather monitoringページの扉
 template: main.html
 hide:
     - toc
