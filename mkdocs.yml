@@ -20,6 +20,10 @@ nav:
         - 週間値: hands-on/weather/monitoring_results/week.md
         - 月間値: hands-on/weather/monitoring_results/month.md
         - 年間値: hands-on/weather/monitoring_results/year.md
+    - LINE Notify:
+      - はじめに: hands-on/LINE_Notify/index.md
+      - 概要と要件: hands-on/LINE_Notify/overview.md
+      - Hands-on: hands-on/LINE_Notify/handson.md
   - その他:
     - はじめに: others/index.md
     - 記法サンプル:
