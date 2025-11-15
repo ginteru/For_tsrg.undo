@@ -171,14 +171,51 @@
     border-bottom: 1px dashed hsl(232, 75%, 95%, 0.32);
 }
 .md-source-file ::before {
-    display: inline-block;
+    /* Font Awesome clock added historically here, but Material now inserts an SVG icon
+       inside `.md-source-file__fact`. This pseudo-element causes duplicate icons.
+       Comment out to avoid showing multiple clock icons. */
+    /* display: inline-block;
     content: '\f017';
     font-family: 'Font Awesome 5 Free';
     margin-right: .3em;
-    margin-left: .6em;
+    margin-left: .6em; */
 }
 .md-nav--secondary .md-source-file {
     color: hsl(232, 75%, 95%, 0.32);
+}
+
+/*
+    ページ内目次の最下部に更新日を表示するスタイル
+    TOC 専用の簡潔レイアウト
+*/
+.md-source-file__toc {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed hsl(232, 75%, 95%, 0.32);
+}
+
+.md-source-file__fact--toc {
+    font-size: 0.65rem;
+    color: hsl(232, 75%, 95%, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.md-icon--toc {
+    flex-shrink: 0;
+    width: 0.85rem;
+    height: 0.85rem;
+}
+
+.md-icon--toc svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.md-source-file__text {
+    white-space: nowrap;
 }
 
 /*

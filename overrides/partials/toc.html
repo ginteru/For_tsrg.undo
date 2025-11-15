@@ -22,13 +22,8 @@
         {% endfor %}
       </ul>
     {% endif %}
-    {#--- ここから追記。コピー元は「content.html」の最後部分 ---#}
-    {% if page.meta and (
-        page.meta.git_revision_date_localized or
-        page.meta.revision_date
-      ) %}
-        {% include "partials/source-file.html" %}
-      {% endif %}
+    {#--- ここから追記。ページ内目次最下部に更新日を表示 ---#}
+    {% include "partials/revision-date-toc.html" %}
     {#--- 追記ここまで ---#}
     </nav>
   

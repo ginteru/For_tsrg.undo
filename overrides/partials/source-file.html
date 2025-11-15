@@ -1,0 +1,27 @@
+{#-
+  カスタム override: 最終更新日のみを出力する
+  Material のデフォルトでは作成日や著者情報も出力されるため、
+  ここで表示を "更新日だけ" に限定する。
+-#}
+{% macro render_updated(date) %}
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="{{ lang.t('source.file.date.updated') }}">
+      {% include ".icons/material/clock-edit-outline.svg" %}
+    </span>
+    {{ date }}
+  </span>
+{% endmacro %}
+
+{% if page.meta %}
+  {% if page.meta.git_revision_date_localized %}
+    {% set updated = page.meta.git_revision_date_localized %}
+  {% elif page.meta.revision_date %}
+    {% set updated = page.meta.revision_date %}
+  {% endif %}
+{% endif %}
+
+{% if updated %}
+  <aside class="md-source-file">
+    {{ render_updated(updated) }}
+  </aside>
+{% endif %}
