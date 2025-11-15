@@ -191,8 +191,8 @@ markdown_extensions:
   # デフォルト設定である[emojione]はライセンスの問題で非推奨らしく、twemojiに変更している
   # 絵文字検索は https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
   # またはここも使えるかも https://www.webfx.com/tools/emoji-cheat-sheet/
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   # code blocks（含むインライン）のハイライトを可能にする。他に[superfences, inlinehilite]も必要。
   - pymdownx.highlight #:
       # 全体にline noを入れる場合に設定する。個別にコードブロックに設定したい場合は、例えば最初に[``` py linenums="1"]などと開始番号を指定する
