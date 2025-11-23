@@ -2,8 +2,12 @@
 title: Hands-on
 description: LINE Notifyを使った通知の仕組みを作る
 template: add_comment.html
-revision_date: 2022年9月3日
+revision_date: 2025年11月16日
 ---
+
+!!! failure
+    LINE Notifyが2025年3月31日をもって終了したために、このページの記載内容は動作せず、単なる参考情報になりました。
+
 
 ## 準備
 

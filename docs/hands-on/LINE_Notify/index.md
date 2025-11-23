@@ -4,8 +4,11 @@ description: LINE Notify-ページの扉
 template: main.html
 hide:
     - toc
-revision_date: 2022年9月3日
+revision_date: 2025年11月16日
 ---
+
+!!! failure
+    LINE Notifyが2025年3月31日をもって終了したために、このページの記載内容は動作せず、単なる参考情報になりました。
 
 ## 経緯
 
